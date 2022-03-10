@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:"http://wwww.w3.org/1999/xhtml">
+    <head>
+        <title>Editar Conciertos</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1>Informacion del Concierto</h1>
+        <a th:href="@{/inicio}">Regresar</a>
+        <br>
+        <div class="form">
+            <form th:object="${concierto}"
+                  th:action="@{/guardar}"
+                  method="POST"
+                 >
+                <div class="txt_field">
+                    <label for="nombre">Nombre del evento:</label>
+                    <input type="text" th:field="*{nombre}" name="nombre" ></input>
+                </div>
+            
+                <div class="txt_field">
+                    <label for="artista">Nombre del artista:</label>
+                    <input type="text" th:field="*{artista}" name="artista" ></input>
+                </div>
+            
+                <div class="txt_field">
+                    <label for="costo">Costo del Evento:</label>
+                    <input type="text" th:field="*{costo}" name="costo" ></input>
+                </div>
+            
+                <div class="txt_field">
+                    <label for="fecha">Fecha del evento:</label>
+                    <input type="text" th:field="*{fecha}" name="fecha" ></input>
+                </div>
+            
+                <div class="txt_field">
+                    <label for="capacidad">Capacidad del evento:</label>
+                    <input type="text" th:field="*{capacidad}" name="capacidad"></input>
+                </div>
+                <div class="txt_field">
+                    <label for="lugar">Lugar del Evento:</label>
+                    <input type="text" th:field="*{lugar}" name="lugar"></input>
+                </div>
+            
+                <button type="submit" value="Guardar informacion">Submit</button>
+            </form>
+        </div>
+    </body>
+</html>

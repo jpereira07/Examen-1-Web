@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+    </head>
+        <body>
+        <h1 th:text="${titulo}"></h1>
+        
+        <div class="all">
+          
+            <table border="i">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Artista</th>
+                        <th>Costo</th>
+                        <th>Fecha</th>
+                        <th>Capacidad</th>
+                        <th>Lugar</th>
+                        <th>Borrar Evento</th>
+                        <th>Agregar Evento</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="user : ${conciertos}">
+                        <td th:text="${user.getNombre}"></td>
+                        <td th:text="${user.getArtista}"></td>
+                        <td th:text="${user.getCosto}"></td>
+                        <td th:text="${user.getFecha}"></td>
+                        <td th:text="${user.getCapacidad}"></td>
+                        <td th:text="${user.getLugar}"></td>
+                        <td>
+                            <a th:href="@{/delete/{id} (id=${user.getId})}">Borrar Evento</a>
+                        </td>
+                        <td>
+                            <a th:href="@{/nuevo}">Agregar Evento</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
